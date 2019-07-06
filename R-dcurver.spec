@@ -4,7 +4,7 @@
 #
 Name     : R-dcurver
 Version  : 0.9.1
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/dcurver_0.9.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dcurver_0.9.1.tar.gz
 Summary  : Utility Functions for Davidian Curves
