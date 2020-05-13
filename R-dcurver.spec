@@ -4,7 +4,7 @@
 #
 Name     : R-dcurver
 Version  : 0.9.1
-Release  : 9
+Release  : 10
 URL      : https://cran.r-project.org/src/contrib/dcurver_0.9.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dcurver_0.9.1.tar.gz
 Summary  : Utility Functions for Davidian Curves
@@ -12,18 +12,14 @@ Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-dcurver-lib = %{version}-%{release}
 Requires: R-Rcpp
+Requires: R-RcppArmadillo
 BuildRequires : R-Rcpp
 BuildRequires : R-RcppArmadillo
-BuildRequires : R-assertthat
-BuildRequires : R-cli
-BuildRequires : R-withr
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
-Davidian curves in R
-====================
-A Davidian curve defines a seminonparametric density, whose shape and flexibility can be tuned by easy to estimate parameters. Since a special case of a Davidian curve is the standard normal density, Davidian curves can be used for relaxing normality assumption in statistical applications \[1\].
+easy to estimate parameters. Since a special case of a Davidian curve is the standard normal density,
+  Davidian curves can be used for relaxing normality assumption in statistical applications (Zhang & Davidian, 2001)
 
 %package lib
 Summary: lib components for the R-dcurver package.
@@ -35,21 +31,22 @@ lib components for the R-dcurver package.
 
 %prep
 %setup -q -c -n dcurver
+cd %{_builddir}/dcurver
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571816343
+export SOURCE_DATE_EPOCH=1589411389
 
 %install
-export SOURCE_DATE_EPOCH=1571816343
+export SOURCE_DATE_EPOCH=1589411389
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
