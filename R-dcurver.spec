@@ -4,7 +4,7 @@
 #
 Name     : R-dcurver
 Version  : 0.9.1
-Release  : 10
+Release  : 11
 URL      : https://cran.r-project.org/src/contrib/dcurver_0.9.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dcurver_0.9.1.tar.gz
 Summary  : Utility Functions for Davidian Curves
@@ -38,10 +38,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589411389
+export SOURCE_DATE_EPOCH=1589515810
 
 %install
-export SOURCE_DATE_EPOCH=1589411389
+export SOURCE_DATE_EPOCH=1589515810
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
